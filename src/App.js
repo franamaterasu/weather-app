@@ -29,7 +29,7 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <main className="main">
       <input
         type="text"
         value={searchValue}
@@ -39,7 +39,7 @@ const App = () => {
       />
       <ActualWeather info={weatherInfo} forecast={forecastInfo} />
       <ForeCastList forecast={forecastInfo} />
-    </div>
+    </main>
   );
 };
 
