@@ -1,0 +1,16 @@
+.forecast-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  flex: 1;
+  flex-basis: 50%;
+
+  &__description {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+  }
+}
