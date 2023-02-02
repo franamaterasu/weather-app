@@ -35,10 +35,16 @@ const App = () => {
         value={searchValue}
         placeholder="Inserta la ciudad"
         onChange={(e) => setSearchValue(e.target.value)}
-        onKeyPress={searchLocation}
+        onKeyDown={searchLocation}
       />
-      <ActualWeather info={weatherInfo} forecast={forecastInfo} />
-      <ForeCastList forecast={forecastInfo} />
+      {!weatherInfo || !forecastInfo ? (
+        "No existen resultados"
+      ) : (
+        <>
+          <ActualWeather info={weatherInfo} forecast={forecastInfo} />
+          <ForeCastList forecast={forecastInfo} />
+        </>
+      )}
     </main>
   );
 };
