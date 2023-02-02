@@ -1,4 +1,4 @@
-const ActualWeather = ({ info, forecast }) => {
+const ActualWeather = ({ info }) => {
   return (
     <section>
       <p>{info.name}</p>
@@ -12,12 +12,6 @@ const ActualWeather = ({ info, forecast }) => {
           <p>{info.weather[0].description}</p>
         </>
       ) : null}
-      <br />
-      {forecast.list
-        ? forecast.list.map((item) => {
-            return <p key={item.dt}>{item.dt_txt}</p>;
-          })
-        : null}
     </section>
   );
 };

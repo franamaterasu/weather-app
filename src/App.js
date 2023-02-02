@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ActualWeather from "./components/actualWeather";
+import ForeCastList from "./components/forecastList";
 
 const App = () => {
   const [weatherInfo, setWeatherInfo] = useState({});
@@ -7,7 +8,7 @@ const App = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const URL_WEATHER = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=7a68b98b464faf27752d6128b275674a`;
-  const URL_FORECAST = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&cnt=5&appid=7a68b98b464faf27752d6128b275674a`;
+  const URL_FORECAST = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=7a68b98b464faf27752d6128b275674a`;
 
   const searchLocation = (e) => {
     if (e.key === "Enter") {
@@ -19,7 +20,7 @@ const App = () => {
 
       fetch(URL_FORECAST).then((res) =>
         res.json().then((res) => {
-          setForecastInfo(res);
+          setForecastInfo(res.list);
         })
       );
 
@@ -37,6 +38,7 @@ const App = () => {
         onKeyPress={searchLocation}
       />
       <ActualWeather info={weatherInfo} forecast={forecastInfo} />
+      <ForeCastList forecast={forecastInfo} />
     </div>
   );
 };
