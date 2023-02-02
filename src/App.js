@@ -2,6 +2,8 @@ import { useState } from "react";
 import ActualWeather from "./components/actualWeather";
 import ForeCastList from "./components/forecastList";
 
+import "./app.scss";
+
 const App = () => {
   const [weatherInfo, setWeatherInfo] = useState({});
   const [forecastInfo, setForecastInfo] = useState({});
@@ -30,20 +32,27 @@ const App = () => {
 
   return (
     <main className="main">
-      <input
-        type="text"
-        value={searchValue}
-        placeholder="Inserta la ciudad"
-        onChange={(e) => setSearchValue(e.target.value)}
-        onKeyDown={searchLocation}
-      />
+      <section className="main__search">
+        <input
+          className="main__input"
+          type="text"
+          value={searchValue}
+          placeholder="Inserta la ciudad"
+          onChange={(e) => setSearchValue(e.target.value)}
+          onKeyDown={searchLocation}
+        />
+      </section>
       {!weatherInfo || !forecastInfo ? (
         "No existen resultados"
       ) : (
-        <>
-          <ActualWeather info={weatherInfo} forecast={forecastInfo} />
-          <ForeCastList forecast={forecastInfo} />
-        </>
+        <section className="main__info">
+          <section className="main__weather">
+            <ActualWeather info={weatherInfo} forecast={forecastInfo} />
+          </section>
+          <section className="main__forecast">
+            <ForeCastList forecast={forecastInfo} />
+          </section>
+        </section>
       )}
     </main>
   );

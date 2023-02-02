@@ -1,0 +1,27 @@
+.actual-weather {
+  text-align: center;
+
+  &__name,
+  &__description {
+    color: #fff;
+  }
+
+  &__icon {
+    transform: scale(2.5);
+  }
+
+  &__name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 55px;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 21px;
+    margin-top: 20px;
+  }
+  
+}

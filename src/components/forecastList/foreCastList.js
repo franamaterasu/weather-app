@@ -6,7 +6,6 @@ const ForeCastList = ({ forecast }) => {
   const list =
     forecast.filter &&
     forecast.filter((item) => {
-      console.log(item);
       return item.dt_txt.slice(0, 10) === date;
     });
 
