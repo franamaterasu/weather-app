@@ -8,6 +8,13 @@
   box-sizing: border-box;
   flex: 1;
   flex-basis: 50%;
+  color: #fff;
+  transition: background-color .5s ease-in-out;
+
+  &:hover {
+    background-color: #f20089;
+    cursor: pointer;
+  }
 
   &__description {
     font-family: 'Lato', sans-serif;

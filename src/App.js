@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ActualWeather from "./components/actualWeather";
 import ForeCastList from "./components/forecastList";
+import EmptyState from "./components/emptyState";
 
 import "./app.scss";
 
@@ -43,7 +44,7 @@ const App = () => {
         />
       </section>
       {!weatherInfo || !forecastInfo ? (
-        "No existen resultados"
+        <EmptyState />
       ) : (
         <section className="main__info">
           <section className="main__weather">
